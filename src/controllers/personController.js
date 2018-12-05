@@ -1,10 +1,14 @@
 'use strict';
 
-const PersonRepository = require('../repositories/personRepository');
+const PersonRepository = require('../services/personService');
 
 var redis = require('redis');
-var client = redis.createClient(6379, 'redis')
-//var client = redis.createClient()
+
+//conexão com o compose
+//var client = redis.createClient(6379, 'redis')
+
+//conexão localhost
+var client = redis.createClient()
 
 exports.get = (req, res) => {
 
